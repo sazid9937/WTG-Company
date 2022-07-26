@@ -332,6 +332,7 @@ img{
 /* footer */
 .footer{
     text-align: center;
+    /* background: blue; */
 }
 .footer .brand-name{
     margin: 24px 0;
