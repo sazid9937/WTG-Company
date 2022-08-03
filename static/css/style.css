@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-:root{
-    --blackRussian: #1f1f26;
-    --greyWhite: #f9f9f9;
-    --pacificBlue: #1ca9c9;
-}
 *{
     box-sizing: border-box;
     padding: 0;
@@ -332,7 +327,7 @@ img{
 /* footer */
 .footer{
     text-align: center;
-    /* background: blue; */
+    background-color: #fff;
 }
 .footer .brand-name{
     margin: 24px 0;
