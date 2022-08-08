@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block glass_page_surface %}
+    {% include 'header.html' %}
+    <div class="big-shop" id="shop">
+        <div class="shop-title">
+            <h2>
+                We are very proud to present you <br> our glass range
+            </h2>
+            <p>
+                Quality is the easiest way to make beautiful products.
+            </p>
+        </div>
+        <div class="shop-flex">
+            {% for field in surface %}
+            <div class="shop-one">
+                <div class="image-one">
+                    <img src="{{field.surface_image.url}}" alt="">
+                    <div class="overlay">
+                        <div class="txt">
+                            <h3>{{field.name}} </h3>
+                            <section>
+                                <span>Explore..</span>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            {% endfor %}  
+        </div>
+    </div>
+    {% include "contact.html" %}
+    {% include "footer.html" %}
+{% endblock glass_page_surface %}

@@ -334,7 +334,7 @@ img{
 }
 .footer a{
     text-decoration: none;
-    color: grey;
+    color: #fff;
 }
 .footer a:hover{
     opacity: 0.7;
@@ -346,14 +346,14 @@ img{
 .footer a, .footer p{
     text-transform: capitalize;
     font-size: 15px;
-    color: grey;
+    color: #fff;
     font-weight: 500;
     opacity: 0.9;
 }
 .footer h3{
     text-transform: uppercase;
     padding: 12px 0;
-    color: grey;
+    color: #fff;
 }
 .footer-icons{
     display: flex;

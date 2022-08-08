@@ -1,0 +1,61 @@
+    {% load static %}
+            <!-- header section -->
+    <header id="header">
+        <div class="logo">
+            <a href="/"><img src="{% static 'images/logo1.png' %}" alt="" width="60px" height="70px"></a>
+        </div>
+        
+        <ul class="navigation">
+            <li><a href="/" class="active">PROFILE</a></li>
+            <li><a href="{% url 'product' %}">PRODUCT</a></li>
+            <li><a href="#features">SURFACES</a></li>
+            <li><a href="#new-arrival">GLASS</a></li>
+            <li><a href="#contact">CONTACT US</a></li>
+        </ul>
+        <div class="bars">
+            <img id="bar" src="{% static 'images/menu.png' %}" alt="">
+        </div>
+    </header>
+
+    <!-- <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: true,
+          autoplay: true,
+          speed: 600,
+          breakpoints: {
+            576: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            991: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+          },
+        });
+    </script>
+  
+    <script>
+          const left = document.querySelector(".left");
+          const right = document.querySelector(".right");
+          const container = document.querySelector(".container-split-page");
+  
+          left.addEventListener("mouseenter", () =>
+          container.classList.add("hover-left")
+          );
+          left.addEventListener("mouseleave", () =>
+          container.classList.remove("hover-left")
+          );
+          right.addEventListener("mouseenter", () =>
+          container.classList.add("hover-right")
+          );
+          right.addEventListener("mouseleave", () =>
+          container.classList.remove("hover-right")
+          );
+    </script> -->
