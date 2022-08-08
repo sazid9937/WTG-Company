@@ -22,3 +22,6 @@ def glass_surface(request,id):
     
 def product(request):
     return render(request,"product.html")
+
+def aboutus(request):
+    return render(request,"aboutus.html")
