@@ -21,7 +21,7 @@
             
             <ul class="navigation">
                 <li><a href="/" class="active">PROFILE</a></li>
-                <li><a href="{% url 'product' %}">PRODUCT</a></li>
+                {% comment %} <li><a href="{% url 'product' %}">PRODUCT</a></li> {% endcomment %}
                 <li><a href="#features">SURFACES</a></li>
                 <li><a href="#new-arrival">GLASS</a></li>
                
@@ -37,21 +37,22 @@
         </div> -->
 
         <div class = "products">
+            
             <div class = "container">
                 <h1 class = "lg-title">All products</h1>
                 <p class = "text-light">WTG offers a complete range of doors and partition systems for interior architecture. A modular and versatile universe made up of swing doors, sliding doors, partitions and dividers, pivot doors, boiserie, Rasomuro doors and custom-made furniture, designed to blend spontaneously into any décor.</p>
-
+                {% for item in product %}
                 <div class = "product-items">
                     <!-- single product -->
                     <div class = "product">
                         <div class = "product-content">
                             <div class = "product-img">
-                                <img src = "{% static 'images/4.png' %}" alt = "product image">
+                                <img src = "{{item.image.url}}" alt = "product image">
                             </div>
-                            <div class = "product-btns">
+                            {% comment %} <div class = "product-btns">
                                 <button type = "button" class = "btn-buy"> More Details
                                 </button>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
 
                         <div class = "product-info">
@@ -66,157 +67,10 @@
                             <h2 class = "sm-title">New</h2>
                         </div>
                     </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                    <div class = "product">
-                        <div class = "product-content">
-                            <div class = "product-img">
-                                <img src = "{% static 'images/2 .jpg' %}" alt = "product image">
-                            </div>
-                            <div class = "product-btns">
-                                <button type = "button" class = "btn-buy"> More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class = "product-info">
-                            <div class = "product-info-top">
-                                <h2 class = "sm-title">Slider</h2>
-                            </div>
-                            <a href = "#" class = "product-name"> DX 23XX</a>
-                        </div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                    <div class = "product">
-                        <div class = "product-content">
-                            <div class = "product-img">
-                                <img src = "{% static 'images/3.jpg' %}" alt = "product image">
-                            </div>
-                            <div class = "product-btns">
-                                <button type = "button" class = "btn-buy"> More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class = "product-info">
-                            <div class = "product-info-top">
-                                <h2 class = "sm-title">Wardrobe</h2>
-                            </div>
-                            <a href = "#" class = "product-name"> DN JJXX</a>
-                        </div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                    <div class = "product">
-                        <div class = "product-content">
-                            <div class = "product-img">
-                                <img src = "{% static 'images/4.png' %}" alt = "product image">
-                            </div>
-                            <div class = "product-btns">
-                                <button type = "button" class = "btn-buy"> More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class = "product-info">
-                            <div class = "product-info-top">
-                                <h2 class = "sm-title">Lstyle</h2>
-                            </div>
-                            <a href = "#" class = "product-name">MWRT 23X</a>
-                        </div>
-
-                        <div class = "off-info">
-                            <h2 class = "sm-title">New</h2>
-                        </div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                    <div class = "product">
-                        <div class = "product-content">
-                            <div class = "product-img">
-                                <img src = "{% static 'images/12.jpg' %}" alt = "product image">
-                            </div>
-                            <div class = "product-btns">
-                                <button type = "button" class = "btn-buy"> More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class = "product-info">
-                            <div class = "product-info-top">
-                                <h2 class = "sm-title">Festyle</h2>
-                            </div>
-                            <a href = "#" class = "product-name">ARMY</a>
-                        </div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                    <div class = "product">
-                        <div class = "product-content">
-                            <div class = "product-img">
-                                <img src = "{% static 'images/12.jpg' %}" alt = "product image">
-                            </div>
-                            <div class = "product-btns">
-                                <button type = "button" class = "btn-buy"> More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class = "product-info">
-                            <div class = "product-info-top">
-                                <h2 class = "sm-title">Life</h2>
-                            </div>
-                            <a href = "#" class = "product-name">Wooes DNX</a>
-                        </div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                    <div class = "product">
-                        <div class = "product-content">
-                            <div class = "product-img">
-                                <img src = "{% static 'images/12.jpg' %}" alt = "product image">
-                            </div>
-                            <div class = "product-btns">
-                                <button type = "button" class = "btn-buy"> More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class = "product-info">
-                            <div class = "product-info-top">
-                                <h2 class = "sm-title">Lifestyle</h2>
-                            </div>
-                            <a href = "#" class = "product-name">TYR</a>
-                        </div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                    <div class = "product">
-                        <div class = "product-content">
-                            <div class = "product-img">
-                                <img src = "{% static 'images/12.jpg' %}" alt = "product image">
-                            </div>
-                            <div class = "product-btns">
-                                <button type = "button" class = "btn-buy"> More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class = "product-info">
-                            <div class = "product-info-top">
-                                <h2 class = "sm-title">lifestyle</h2>
-                            </div>
-                            <a href = "#" class = "product-name">Wome DN 23XX</a>
-                        </div>
-
-                        <div class = "off-info">
-                            <h2 class = "sm-title">New</h2>
-                        </div>
-                    </div>
-                    <!-- end of single product -->
                 </div>
+                {% endfor %}
             </div>
+            
         </div>
 
         

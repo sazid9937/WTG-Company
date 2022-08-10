@@ -15,12 +15,15 @@
             {% for field in surface %}
             <div class="shop-one">
                 <div class="image-one">
+                    
                     <img src="{{field.surface_image.url}}" alt="">
                     <div class="overlay">
                         <div class="txt">
-                            <h3>{{field.name}} </h3>
+
+                            <a href="{% url 'products' field.surface_id %}">
+                            <h3>{{field.name}} </h3></a>
+                            
                             <section>
-                                <span>Explore..</span>
                             </section>
                         </div>
                     </div>

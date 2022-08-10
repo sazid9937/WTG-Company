@@ -1,5 +1,4 @@
 from pickle import TRUE
-from unicodedata import category
 from django.db import models
 # from sqlalchemy import true
 
@@ -27,16 +26,15 @@ class surfaces(models.Model):
         return self.name
     
     
-class product(models.Model):    
+class product_s(models.Model):    
     product_id=models.AutoField(primary_key=True)
     model=models.CharField(max_length=200)
     product_category=models.ForeignKey(category_p,on_delete=models.CASCADE)
     product_surface = models.ForeignKey(surfaces, on_delete=models.CASCADE)
     size=models.CharField( max_length=50)
-    tone_of_color=models.CharField(max_length=50)
-    color=models.CharField(max_length=50)
-    opacity=models.CharField(max_length=50)
-    deleted=models.IntegerField()
+    standard_thinckness=models.CharField( max_length=150)
+    finish=models.CharField( max_length=150)
+    deleted=models.IntegerField(default='0')
     image=models.ImageField(upload_to='media/product', height_field=None, width_field=None, max_length=None)
     is_active=models.BooleanField(default='0')
     
