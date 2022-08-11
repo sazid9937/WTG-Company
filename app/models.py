@@ -15,6 +15,12 @@ class category_p(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = 'ModelName'
+        verbose_name_plural = 'ModelNames'
+    
 class surfaces(models.Model):    
     surface_id=models.AutoField(primary_key=True)
     category_surface=models.ForeignKey(category_p, on_delete=models.CASCADE)

@@ -1,263 +1,48 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/prodect.css' %}">
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
-        <!-- font awesome -->
-        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <header id="header">
-            <div class="logo">
-                <a href="/"><img src="{% static 'images/logo1.png' %}" alt="" width="60px" height="70px"></a>
-            </div>
-            
-            <ul class="navigation">
-                <li><a href="/" class="active">PROFILE</a></li>
-                {% comment %} <li><a href="{% url 'product' %}">PRODUCT</a></li> {% endcomment %}
-                <li><a href="#features">SURFACES</a></li>
-                <li><a href="#new-arrival">GLASS</a></li>
-               
-                <li><a href="#contact">CONTACT US</a></li>
-            </ul>
-            <div class="bars">
-                <img id="bar" src="{% static 'images/menu.png' %}" alt="">
-            </div>
-        </header>
-
-        <!-- <div class="container-mirror">
-
-        </div> -->
-
-        <div class = "products">
-            
-            <div class = "container">
-                <h1 class = "lg-title">All products</h1>
-                <p class = "text-light">WTG offers a complete range of doors and partition systems for interior architecture. A modular and versatile universe made up of swing doors, sliding doors, partitions and dividers, pivot doors, boiserie, Rasomuro doors and custom-made furniture, designed to blend spontaneously into any décor.</p>
-                {% for item in product %}
-                <div class = "product-items">
-                    <!-- single product -->
-                    <div class = "product">
-                        <div class = "product-content">
-                            <div class = "product-img">
-                                <img src = "{{item.image.url}}" alt = "product image">
+{% block product %}
+    {% include "header.html" %}
+    <div class = "products">
+        <div>                
+            <div class="big-product" id="features">
+                <div class="product-title">
+                    <p>
+                        browse our items
+                    </p>
+                    <h2>
+                        Ideal for your home
+                    </h2>
+                    <hr>
+                </div>
+                <div class="product-flex">
+                    {% for field in product %}
+                    <div class="product-one">
+                        <div class="product-image">
+                            <img src="{{field.image.url}}" alt="">
+                            <div class="overlay">
+                                <a href="#"> <h5>Check more.</h5></a>
+                                {% comment %} <i class="fas fa-shopping-bag"></i>
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-search"></i> {% endcomment %}
                             </div>
-                            {% comment %} <div class = "product-btns">
-                                <button type = "button" class = "btn-buy"> More Details
-                                </button>
+                        </div>
+                        <div class="content">
+                            <div class="left">
+                                <h6>
+                                    {{field.model}}
+                                </h6>
+                            </div>
+                            {% comment %} <div class="right">
+                                <section>{{field.standard_thinckness}}</section>
                             </div> {% endcomment %}
                         </div>
-
-                        <div class = "product-info">
-                            <div class = "product-info-top">
-                                <h2 class = "sm-title">Furniture</h2>
-                            </div>
-                            <a href = "#" class = "product-name"></a> DN 23XX</a>
-                            
-                        </div>
-
-                        <div class = "off-info">
-                            <h2 class = "sm-title">New</h2>
-                        </div>
+                        
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-            </div>
-            
-        </div>
-
-        
-        <div class="container1" id="contact1">
-            <!---<span class="big-circle"></span>
-            <img src="img/shape.png" class="square" alt="" />-->
-            <div class="form">
-            <div class="contact-info">
-                <h3 class="title">Let’s talk about <br> your project</h3>
-                <p class="text">
-                    Interested in learning more about our services and products?  Feel free to fill the form and we will get back to you as soon as possible.
-                </p>
-    
-                <div class="info">
-                <div class="information">
-                
-                    <p>come to showroom</p>
-                </div>
-                <div class="information">
-                    
-                    <p>sales network</p>
-                </div>
-                <div class="information">
-                    
-                    <p>contact us</p>
-                </div>
-                </div>
-            </div>
-    
-            <div class="contact-form">
-    
-                <form action="index.html" autocomplete="off">
-                
-                <div class="input-container">
-                    <input type="text" name="name" class="input" placeholder="Name"/>
-                    
-                    <span>Username</span>
-                </div>
-
-                <div class="input-container">
-                    <input type="text" name="name" class="input" placeholder="Sir name"/>
-                    
-                    <span>Username</span>
-                </div>
-                <div class="input-container">
-                    <input type="email" name="email" class="input" placeholder="E-mail" />
-                
-                    <span>Email</span>
-                </div>
-
-                <div class="input-container">
-                    <input type="text" name="name" class="input" placeholder="Photo"/>
-                    
-                    <span>Username</span>
-                </div>
-                <div class="input-container">
-                    <input type="text" name="name" class="input" placeholder="Company"/>
-                    
-                    <span>Username</span>
-                </div>
-                <div class="input-container">
-                    <input type="text" name="name" class="input" placeholder="Address"/>
-                    
-                    <span>Username</span>
-                </div>
-                
-                <div class="input-container">
-                    <input type="tel" name="phone" class="input"  placeholder="Phone No"/>
-                    
-                    <span>Phone</span>
-                </div>
-                <div class="input-container textarea">
-                    <textarea name="message" class="input" placeholder="Message"></textarea>
-                    
-                    <span>Message</span>
-                </div>
-                <input type="submit" value="submit" class="btn" />
-                </form>
-            </div>
             </div>
         </div>
-
-
-
-        <footer class = "footer container">
-            <div class = "footer-item">
-            <h2 class = "brand-name">
-                WT <span>Glass</span>
-            </h2>
-            <p>social media accounts</p>
-            <ul class = "footer-icons">
-                <li>
-                <a href = "#"><i class = "fab fa-facebook-f"></i></a>
-                </li>
-                <li>
-                <a href = "#"><i class = "fab fa-twitter"></i></a>
-                </li>
-                <li>
-                <a href = "#"><i class = "fab fa-instagram"></i></a>
-                </li>
-                <li>
-                <a href = "#"><i class = "fab fa-linkedin"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class = "fab fa-google-plus-g"></i></a>
-                </li>
-        
-                </ul>
-            </div>
-            <div class = "footer-item">
-            <h3>links</h3>
-            <ul>
-                <li><a href = "#">home</a></li>
-                <li><a href = "#">download</a></li>
-                <li><a href = "#">pricing</a></li>
-                <li><a href = "#">about</a></li>
-            </ul>
-            </div>
-    
-            <div class = "footer-item">
-            <h3>products</h3>
-            <ul>
-                <li><a href = "#">Glass Door</a></li>
-                <li><a href = "#">sliders</a></li>
-                <li><a href = "#">Base</a></li>
-                <li><a href = "#">Draws</a></li>
-            </ul>
-            </div>
-    
-            <div class = "footer-item">
-            <h3>support</h3>
-            <ul>
-                <!-- <li><a href = "#">FAQ</a></li> -->
-                <!-- <li><a href = "#">how it works</a></li> -->
-                <!-- <li><a href = "#">features</a></li> -->
-                <li><a href = "#">contact</a></li>
-            </ul>
-            </div>
-        </footer>  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: true,
-            autoplay: true,
-            speed: 600,
-            breakpoints: {
-                576: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-                },
-                768: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-                },
-                991: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-                },
-            },
-            });
-        </script>
-
-        <script>
-            const left = document.querySelector(".left");
-            const right = document.querySelector(".right");
-            const container = document.querySelector(".container-split-page");
-
-            left.addEventListener("mouseenter", () =>
-            container.classList.add("hover-left")
-            );
-            left.addEventListener("mouseleave", () =>
-            container.classList.remove("hover-left")
-            );
-            right.addEventListener("mouseenter", () =>
-            container.classList.add("hover-right")
-            );
-            right.addEventListener("mouseleave", () =>
-            container.classList.remove("hover-right")
-            );
-        </script>
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-        <script src="{% static 'js/main.js' %}"></script>
-        
-    </body>
-</html>
+    </div>
+    {% include "contact.html" %}
+    {% include "footer.html" %}
+{% endblock product %}
