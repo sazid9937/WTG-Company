@@ -1,0 +1,19 @@
+    {% load static %}
+            <!-- header section -->
+    <header id="header">
+        <div class="logo">
+            <a href="/"><img src="{% static 'images/logo1.png' %}" alt="" width="60px" height="70px"></a>
+        </div>
+        
+        <ul class="navigation">
+            <li><a href="/" class="active">PROFILE</a></li>
+            <li><a href="#">PRODUCT</a></li>
+            <li><a href="#features">SURFACES</a></li>
+            <li><a href="#new-arrival">GLASS</a></li>
+            <li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+            <li><a href="#contact">CONTACT US</a></li>
+        </ul>
+        <div class="bars">
+            <img id="bar" src="{% static 'images/menu.png' %}" alt="">
+        </div>
+    </header>
